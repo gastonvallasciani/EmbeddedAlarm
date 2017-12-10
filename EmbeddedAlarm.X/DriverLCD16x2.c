@@ -2,6 +2,8 @@
 #include  "devices.h"
 #include "DriverLCD16x2.h"
 
+#include <stdio.h>
+
 #define lcd                   PORTB
 #define DB7_PORT              PORTBbits.RB0
 #define DB6_PORT              PORTBbits.RB1
@@ -59,6 +61,20 @@ void lcd_msg(unsigned char *c)
     {
         lcd_dwr(*c++);
     }
+}
+
+void lcd_msg_int(int msg)
+{
+   char aux[10];
+   sprintf(aux,"%u",msg);
+   lcd_msg(aux); 
+}
+
+void lcd_msg_float(float msg)
+{
+   char aux[5];
+   sprintf(aux,"%f",msg);
+   lcd_msg(aux); 
 }
 
 void lcd_init(void)

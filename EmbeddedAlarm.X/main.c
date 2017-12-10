@@ -103,12 +103,13 @@ void main(void)
      EUSART1_Write(1);
      
     lcd_init();
-    lcd_msg("puto el q lee");
+    //lcd_msg("puto el q lee");
     DisplayONCursorONToggleON();
     Delay(_1s);
     //DisplayClear();
     //HomeReturn();
     CursorGOTOxy(5,2);
+    lcd_msg_float(56.2);
     while (1)
     {
          EUSART1_Write(KeyPadAcquire());

@@ -50,12 +50,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _EUSART1_Write `(v ~T0 @X0 0 ef1`uc ]
 "32 DriverLCD16x2.h
 [v _lcd_init `(v ~T0 @X0 0 ef ]
-"31
-[v _lcd_msg `(v ~T0 @X0 0 ef1`*uc ]
 "36
 [v _DisplayONCursorONToggleON `(v ~T0 @X0 0 ef ]
 "39
 [v _CursorGOTOxy `(v ~T0 @X0 0 ef2`i`i ]
+"41
+[v _lcd_msg_float `(v ~T0 @X0 0 ef1`f ]
 "18 DriverTeclado.h
 [v _KeyPadAcquire `(i ~T0 @X0 0 ef ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
@@ -6750,6 +6750,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;DriverLCD16x2.h: 37: void DisplayONCursorOFFToggleOFF(void);
 [; ;DriverLCD16x2.h: 38: void DisplayOFF(void);
 [; ;DriverLCD16x2.h: 39: void CursorGOTOxy(int x,int y);
+[; ;DriverLCD16x2.h: 40: void lcd_msg_int(int msg);
+[; ;DriverLCD16x2.h: 41: void lcd_msg_float(float msg);
 "55 main.c
 [v _main `(v ~T0 @X0 1 ef ]
 "56
@@ -6803,9 +6805,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 105: lcd_init();
 "105
 [e ( _lcd_init ..  ]
-[; ;main.c: 106: lcd_msg("puto el q lee");
-"106
-[e ( _lcd_msg (1 -> :s 1C `*uc ]
 [; ;main.c: 107: DisplayONCursorONToggleON();
 "107
 [e ( _DisplayONCursorONToggleON ..  ]
@@ -6815,28 +6814,29 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 111: CursorGOTOxy(5,2);
 "111
 [e ( _CursorGOTOxy (2 , -> 5 `i -> 2 `i ]
-[; ;main.c: 112: while (1)
+[; ;main.c: 112: lcd_msg_float(56.2);
 "112
-[e :U 861 ]
-[; ;main.c: 113: {
+[e ( _lcd_msg_float (1 -> .56.2 `f ]
+[; ;main.c: 113: while (1)
 "113
-{
-[; ;main.c: 114: EUSART1_Write(KeyPadAcquire());
+[e :U 861 ]
+[; ;main.c: 114: {
 "114
+{
+[; ;main.c: 115: EUSART1_Write(KeyPadAcquire());
+"115
 [e ( _EUSART1_Write (1 -> ( _KeyPadAcquire ..  `uc ]
-[; ;main.c: 116: Delay(10*10*10);
-"116
+[; ;main.c: 117: Delay(10*10*10);
+"117
 [e ( _Delay (1 -> * * -> 10 `i -> 10 `i -> 10 `i `ui ]
-"118
+"119
 }
 [e :U 860 ]
-"112
+"113
 [e $U 861  ]
 [e :U 862 ]
-[; ;main.c: 118: }
 [; ;main.c: 119: }
-"119
+[; ;main.c: 120: }
+"120
 [e :UE 850 ]
 }
-[a 1C 112 117 116 111 32 101 108 32 113 32 108 101 101 0 ]
-

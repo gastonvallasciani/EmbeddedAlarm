@@ -37,6 +37,8 @@ void DisplayONCursorONToggleON(void); // Turn ON the Display with the cursor ang
 void DisplayONCursorOFFToggleOFF(void);// Turn ON the display without the cursor 
 void DisplayOFF(void);
 void CursorGOTOxy(int x,int y);
+void lcd_msg_int(int msg);
+void lcd_msg_float(float msg);
 //----------------------------------------------------------------------------//
 
 #ifdef	__cplusplus
