@@ -52,11 +52,29 @@ S_MASTER_10BIT_RESTART 11
 [v _Delay Delay `(v  1 e 1 0 ]
 "22
 [v _TMR4_Interrupt TMR4_Interrupt `(v  1 e 1 0 ]
-"16 C:\Users\Gaston\Desktop\EmbeddedAlarm\EmbeddedAlarm.X\DriverTeclado.c
+"15 C:\Users\Gaston\Desktop\EmbeddedAlarm\EmbeddedAlarm.X\DriverLCD16x2.c
+[v _lcd_lat lcd_lat `(v  1 e 1 0 ]
+"23
+[v _lcd_cmd lcd_cmd `(v  1 e 1 0 ]
+"35
+[v _lcd_cmd_hf lcd_cmd_hf `(v  1 e 1 0 ]
+"43
+[v _lcd_dwr lcd_dwr `(v  1 e 1 0 ]
+"56
+[v _lcd_msg lcd_msg `(v  1 e 1 0 ]
+"64
+[v _lcd_init lcd_init `(v  1 e 1 0 ]
+"96
+[v _DisplayONCursorONToggleON DisplayONCursorONToggleON `(v  1 e 1 0 ]
+"114
+[v _CursorGOTOxy CursorGOTOxy `(v  1 e 1 0 ]
+"7 C:\Users\Gaston\Desktop\EmbeddedAlarm\EmbeddedAlarm.X\DriverTeclado.c
+[v _KeyPadInit KeyPadInit `(v  1 e 1 0 ]
+"16
 [v _KeyPadScan KeyPadScan `(uc  1 e 1 0 ]
 "189
 [v _KeyPadAcquire KeyPadAcquire `(i  1 e 2 0 ]
-"53 C:\Users\Gaston\Desktop\EmbeddedAlarm\EmbeddedAlarm.X\main.c
+"55 C:\Users\Gaston\Desktop\EmbeddedAlarm\EmbeddedAlarm.X\main.c
 [v _main main `(v  1 e 1 0 ]
 "55 C:\Users\Gaston\Desktop\EmbeddedAlarm\EmbeddedAlarm.X\mcc_generated_files/eusart1.c
 [v _EUSART1_Initialize EUSART1_Initialize `(v  1 e 1 0 ]
@@ -180,7 +198,7 @@ S_MASTER_10BIT_RESTART 11
 "6136
 [u S785 . 1 `S781 1 . 1 0 ]
 [v _PIR5bits PIR5bits `VES785  1 e 1 @3966 ]
-[s S1363 . 1 `uc 1 RA0 1 0 :1:0 
+[s S1435 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
 `uc 1 RA2 1 0 :1:2 
 `uc 1 RA3 1 0 :1:3 
@@ -190,67 +208,127 @@ S_MASTER_10BIT_RESTART 11
 `uc 1 RA7 1 0 :1:7 
 ]
 "6285
-[s S1372 . 1 `uc 1 AN0 1 0 :1:0 
+[s S1444 . 1 `uc 1 AN0 1 0 :1:0 
 `uc 1 AN1 1 0 :1:1 
 `uc 1 AN2 1 0 :1:2 
 `uc 1 AN3 1 0 :1:3 
 `uc 1 . 1 0 :1:4 
 `uc 1 AN4 1 0 :1:5 
 ]
-[s S1379 . 1 `uc 1 C12IN0M 1 0 :1:0 
+[s S1451 . 1 `uc 1 C12IN0M 1 0 :1:0 
 `uc 1 C12IN1M 1 0 :1:1 
 `uc 1 C2INP 1 0 :1:2 
 `uc 1 C1INP 1 0 :1:3 
 `uc 1 C1OUT 1 0 :1:4 
 `uc 1 C2OUT 1 0 :1:5 
 ]
-[s S1386 . 1 `uc 1 C12IN0N 1 0 :1:0 
+[s S1458 . 1 `uc 1 C12IN0N 1 0 :1:0 
 `uc 1 C12IN1N 1 0 :1:1 
 `uc 1 VREFM 1 0 :1:2 
 `uc 1 VREFP 1 0 :1:3 
 `uc 1 T0CKI 1 0 :1:4 
 `uc 1 SS 1 0 :1:5 
 ]
-[s S1393 . 1 `uc 1 . 1 0 :5:0 
+[s S1465 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 NOT_SS 1 0 :1:5 
 ]
-[s S1396 . 1 `uc 1 . 1 0 :2:0 
+[s S1468 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 VREFN 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
 `uc 1 SRQ 1 0 :1:4 
 `uc 1 nSS 1 0 :1:5 
 ]
-[s S1402 . 1 `uc 1 . 1 0 :2:0 
+[s S1474 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 CVREF 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 LVDIN 1 0 :1:5 
 ]
-[s S1407 . 1 `uc 1 . 1 0 :2:0 
+[s S1479 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 DACOUT 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 HLVDIN 1 0 :1:5 
 ]
-[s S1412 . 1 `uc 1 . 1 0 :5:0 
+[s S1484 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 SS1 1 0 :1:5 
 ]
-[s S1415 . 1 `uc 1 . 1 0 :5:0 
+[s S1487 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 NOT_SS1 1 0 :1:5 
 ]
-[s S1418 . 1 `uc 1 . 1 0 :5:0 
+[s S1490 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 nSS1 1 0 :1:5 
 ]
-[s S1421 . 1 `uc 1 . 1 0 :5:0 
+[s S1493 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 SRNQ 1 0 :1:5 
 ]
-[s S1424 . 1 `uc 1 ULPWUIN 1 0 :1:0 
+[s S1496 . 1 `uc 1 ULPWUIN 1 0 :1:0 
 `uc 1 . 1 0 :6:1 
 `uc 1 RJPU 1 0 :1:7 
 ]
-[u S1428 . 1 `S1363 1 . 1 0 `S1372 1 . 1 0 `S1379 1 . 1 0 `S1386 1 . 1 0 `S1393 1 . 1 0 `S1396 1 . 1 0 `S1402 1 . 1 0 `S1407 1 . 1 0 `S1412 1 . 1 0 `S1415 1 . 1 0 `S1418 1 . 1 0 `S1421 1 . 1 0 `S1424 1 . 1 0 ]
-[v _PORTAbits PORTAbits `VES1428  1 e 1 @3968 ]
+[u S1500 . 1 `S1435 1 . 1 0 `S1444 1 . 1 0 `S1451 1 . 1 0 `S1458 1 . 1 0 `S1465 1 . 1 0 `S1468 1 . 1 0 `S1474 1 . 1 0 `S1479 1 . 1 0 `S1484 1 . 1 0 `S1487 1 . 1 0 `S1490 1 . 1 0 `S1493 1 . 1 0 `S1496 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES1500  1 e 1 @3968 ]
+"6484
+[v _PORTB PORTB `VEuc  1 e 1 @3969 ]
+[s S1609 . 1 `uc 1 RB0 1 0 :1:0 
+`uc 1 RB1 1 0 :1:1 
+`uc 1 RB2 1 0 :1:2 
+`uc 1 RB3 1 0 :1:3 
+`uc 1 RB4 1 0 :1:4 
+`uc 1 RB5 1 0 :1:5 
+`uc 1 RB6 1 0 :1:6 
+`uc 1 RB7 1 0 :1:7 
+]
+"6554
+[s S1618 . 1 `uc 1 INT0 1 0 :1:0 
+`uc 1 INT1 1 0 :1:1 
+`uc 1 INT2 1 0 :1:2 
+`uc 1 CCP2 1 0 :1:3 
+`uc 1 KBI0 1 0 :1:4 
+`uc 1 KBI1 1 0 :1:5 
+`uc 1 KBI2 1 0 :1:6 
+`uc 1 KBI3 1 0 :1:7 
+]
+[s S1627 . 1 `uc 1 AN12 1 0 :1:0 
+`uc 1 AN10 1 0 :1:1 
+`uc 1 AN8 1 0 :1:2 
+`uc 1 AN9 1 0 :1:3 
+`uc 1 AN11 1 0 :1:4 
+`uc 1 AN13 1 0 :1:5 
+`uc 1 PGC 1 0 :1:6 
+`uc 1 PGD 1 0 :1:7 
+]
+[s S1636 . 1 `uc 1 FLT0 1 0 :1:0 
+`uc 1 C12IN3M 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 C12IN2M 1 0 :1:3 
+`uc 1 T5G 1 0 :1:4 
+`uc 1 T1G 1 0 :1:5 
+]
+[s S1643 . 1 `uc 1 SRI 1 0 :1:0 
+`uc 1 C12IN3N 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 C12IN2N 1 0 :1:3 
+`uc 1 . 1 0 :1:4 
+`uc 1 CCP3 1 0 :1:5 
+]
+[s S1650 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 CTED1 1 0 :1:2 
+`uc 1 CTED2 1 0 :1:3 
+`uc 1 . 1 0 :1:4 
+`uc 1 T3CKI 1 0 :1:5 
+]
+[s S1656 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 P2A 1 0 :1:3 
+`uc 1 . 1 0 :1:4 
+`uc 1 P3A 1 0 :1:5 
+]
+[s S1661 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 CCP2_PA2 1 0 :1:3 
+]
+[u S1664 . 1 `S1609 1 . 1 0 `S1618 1 . 1 0 `S1627 1 . 1 0 `S1636 1 . 1 0 `S1643 1 . 1 0 `S1650 1 . 1 0 `S1656 1 . 1 0 `S1661 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES1664  1 e 1 @3969 ]
 "7475
 [v _LATA LATA `VEuc  1 e 1 @3977 ]
-[s S1323 . 1 `uc 1 LATA0 1 0 :1:0 
+[s S1395 . 1 `uc 1 LATA0 1 0 :1:0 
 `uc 1 LATA1 1 0 :1:1 
 `uc 1 LATA2 1 0 :1:2 
 `uc 1 LATA3 1 0 :1:3 
@@ -260,7 +338,7 @@ S_MASTER_10BIT_RESTART 11
 `uc 1 LATA7 1 0 :1:7 
 ]
 "7502
-[s S1332 . 1 `uc 1 LA0 1 0 :1:0 
+[s S1404 . 1 `uc 1 LA0 1 0 :1:0 
 `uc 1 LA1 1 0 :1:1 
 `uc 1 LA2 1 0 :1:2 
 `uc 1 LA3 1 0 :1:3 
@@ -269,15 +347,36 @@ S_MASTER_10BIT_RESTART 11
 `uc 1 LA6 1 0 :1:6 
 `uc 1 LA7 1 0 :1:7 
 ]
-[u S1341 . 1 `S1323 1 . 1 0 `S1332 1 . 1 0 ]
-[v _LATAbits LATAbits `VES1341  1 e 1 @3977 ]
+[u S1413 . 1 `S1395 1 . 1 0 `S1404 1 . 1 0 ]
+[v _LATAbits LATAbits `VES1413  1 e 1 @3977 ]
 "7586
 [v _LATB LATB `VEuc  1 e 1 @3978 ]
+[s S1266 . 1 `uc 1 LATB0 1 0 :1:0 
+`uc 1 LATB1 1 0 :1:1 
+`uc 1 LATB2 1 0 :1:2 
+`uc 1 LATB3 1 0 :1:3 
+`uc 1 LATB4 1 0 :1:4 
+`uc 1 LATB5 1 0 :1:5 
+`uc 1 LATB6 1 0 :1:6 
+`uc 1 LATB7 1 0 :1:7 
+]
+"7613
+[s S1275 . 1 `uc 1 LB0 1 0 :1:0 
+`uc 1 LB1 1 0 :1:1 
+`uc 1 LB2 1 0 :1:2 
+`uc 1 LB3 1 0 :1:3 
+`uc 1 LB4 1 0 :1:4 
+`uc 1 LB5 1 0 :1:5 
+`uc 1 LB6 1 0 :1:6 
+`uc 1 LB7 1 0 :1:7 
+]
+[u S1284 . 1 `S1266 1 . 1 0 `S1275 1 . 1 0 ]
+[v _LATBbits LATBbits `VES1284  1 e 1 @3978 ]
 "7697
 [v _LATC LATC `VEuc  1 e 1 @3979 ]
 "7808
 [v _LATD LATD `VEuc  1 e 1 @3980 ]
-[s S1267 . 1 `uc 1 LATD0 1 0 :1:0 
+[s S1311 . 1 `uc 1 LATD0 1 0 :1:0 
 `uc 1 LATD1 1 0 :1:1 
 `uc 1 LATD2 1 0 :1:2 
 `uc 1 LATD3 1 0 :1:3 
@@ -287,7 +386,7 @@ S_MASTER_10BIT_RESTART 11
 `uc 1 LATD7 1 0 :1:7 
 ]
 "7835
-[s S1276 . 1 `uc 1 LD0 1 0 :1:0 
+[s S1320 . 1 `uc 1 LD0 1 0 :1:0 
 `uc 1 LD1 1 0 :1:1 
 `uc 1 LD2 1 0 :1:2 
 `uc 1 LD3 1 0 :1:3 
@@ -296,8 +395,8 @@ S_MASTER_10BIT_RESTART 11
 `uc 1 LD6 1 0 :1:6 
 `uc 1 LD7 1 0 :1:7 
 ]
-[u S1285 . 1 `S1267 1 . 1 0 `S1276 1 . 1 0 ]
-[v _LATDbits LATDbits `VES1285  1 e 1 @3980 ]
+[u S1329 . 1 `S1311 1 . 1 0 `S1320 1 . 1 0 ]
+[v _LATDbits LATDbits `VES1329  1 e 1 @3980 ]
 "7919
 [v _LATE LATE `VEuc  1 e 1 @3981 ]
 "7970
@@ -657,10 +756,39 @@ S_MASTER_10BIT_RESTART 11
 [v _TMR2_InterruptHandler TMR2_InterruptHandler `*.37(v  1 e 2 0 ]
 "57 C:\Users\Gaston\Desktop\EmbeddedAlarm\EmbeddedAlarm.X\mcc_generated_files/tmr4.c
 [v _TMR4_InterruptHandler TMR4_InterruptHandler `*.37(v  1 e 2 0 ]
-"53 C:\Users\Gaston\Desktop\EmbeddedAlarm\EmbeddedAlarm.X\main.c
+"55 C:\Users\Gaston\Desktop\EmbeddedAlarm\EmbeddedAlarm.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"106
+"119
+} 0
+"56 C:\Users\Gaston\Desktop\EmbeddedAlarm\EmbeddedAlarm.X\DriverLCD16x2.c
+[v _lcd_msg lcd_msg `(v  1 e 1 0 ]
+{
+[v lcd_msg@c c `*.32uc  1 p 2 22 ]
+"62
+} 0
+"43
+[v _lcd_dwr lcd_dwr `(v  1 e 1 0 ]
+{
+[v lcd_dwr@x x `uc  1 a 1 wreg ]
+[v lcd_dwr@x x `uc  1 a 1 wreg ]
+"45
+[v lcd_dwr@x x `uc  1 a 1 21 ]
+"54
+} 0
+"64
+[v _lcd_init lcd_init `(v  1 e 1 0 ]
+{
+"82
+} 0
+"35
+[v _lcd_cmd_hf lcd_cmd_hf `(v  1 e 1 0 ]
+{
+[v lcd_cmd_hf@x x `uc  1 a 1 wreg ]
+[v lcd_cmd_hf@x x `uc  1 a 1 wreg ]
+"37
+[v lcd_cmd_hf@x x `uc  1 a 1 21 ]
+"41
 } 0
 "111 C:\Users\Gaston\Desktop\EmbeddedAlarm\EmbeddedAlarm.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
@@ -729,7 +857,12 @@ S_MASTER_10BIT_RESTART 11
 {
 "74
 } 0
-"189 C:\Users\Gaston\Desktop\EmbeddedAlarm\EmbeddedAlarm.X\DriverTeclado.c
+"7 C:\Users\Gaston\Desktop\EmbeddedAlarm\EmbeddedAlarm.X\DriverTeclado.c
+[v _KeyPadInit KeyPadInit `(v  1 e 1 0 ]
+{
+"13
+} 0
+"189
 [v _KeyPadAcquire KeyPadAcquire `(i  1 e 2 0 ]
 {
 "191
@@ -745,12 +878,6 @@ S_MASTER_10BIT_RESTART 11
 [v KeyPadScan@Push Push `uc  1 s 1 Push ]
 "185
 } 0
-"7 C:\Users\Gaston\Desktop\EmbeddedAlarm\EmbeddedAlarm.X\devices.c
-[v _Delay Delay `(v  1 e 1 0 ]
-{
-[v Delay@DelayCount DelayCount `ui  1 p 2 19 ]
-"20
-} 0
 "96 C:\Users\Gaston\Desktop\EmbeddedAlarm\EmbeddedAlarm.X\mcc_generated_files/eusart1.c
 [v _EUSART1_Write EUSART1_Write `(v  1 e 1 0 ]
 {
@@ -758,6 +885,41 @@ S_MASTER_10BIT_RESTART 11
 [v EUSART1_Write@txData txData `uc  1 a 1 wreg ]
 [v EUSART1_Write@txData txData `uc  1 a 1 19 ]
 "103
+} 0
+"96 C:\Users\Gaston\Desktop\EmbeddedAlarm\EmbeddedAlarm.X\DriverLCD16x2.c
+[v _DisplayONCursorONToggleON DisplayONCursorONToggleON `(v  1 e 1 0 ]
+{
+"100
+} 0
+"114
+[v _CursorGOTOxy CursorGOTOxy `(v  1 e 1 0 ]
+{
+"116
+[v CursorGOTOxy@i i `i  1 a 2 26 ]
+"114
+[v CursorGOTOxy@x x `i  1 p 2 22 ]
+[v CursorGOTOxy@y y `i  1 p 2 24 ]
+"133
+} 0
+"23
+[v _lcd_cmd lcd_cmd `(v  1 e 1 0 ]
+{
+[v lcd_cmd@x x `uc  1 a 1 wreg ]
+[v lcd_cmd@x x `uc  1 a 1 wreg ]
+"25
+[v lcd_cmd@x x `uc  1 a 1 21 ]
+"33
+} 0
+"15
+[v _lcd_lat lcd_lat `(v  1 e 1 0 ]
+{
+"21
+} 0
+"7 C:\Users\Gaston\Desktop\EmbeddedAlarm\EmbeddedAlarm.X\devices.c
+[v _Delay Delay `(v  1 e 1 0 ]
+{
+[v Delay@DelayCount DelayCount `ui  1 p 2 19 ]
+"20
 } 0
 "57 C:\Users\Gaston\Desktop\EmbeddedAlarm\EmbeddedAlarm.X\mcc_generated_files/interrupt_manager.c
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]

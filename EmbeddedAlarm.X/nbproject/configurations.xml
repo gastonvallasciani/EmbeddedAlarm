@@ -19,6 +19,7 @@
       </logicalFolder>
       <itemPath>DriverTeclado.h</itemPath>
       <itemPath>devices.h</itemPath>
+      <itemPath>DriverLCD16x2.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -43,6 +44,7 @@
       <itemPath>main.c</itemPath>
       <itemPath>DriverTeclado.c</itemPath>
       <itemPath>devices.c</itemPath>
+      <itemPath>DriverLCD16x2.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

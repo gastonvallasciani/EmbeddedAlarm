@@ -20,7 +20,20 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _TMR4_SetInterruptHandler `(v ~T0 @X0 0 ef1`*v ]
 "26 devices.h
 [v _TMR4_Interrupt `(v ~T0 @X0 0 ef ]
-"25
+"15 DriverTeclado.h
+[v _KeyPadInit `(v ~T0 @X0 0 ef ]
+"7592 C:\Program Files (x86)\Microchip\xc8\v1.41\include\pic18f46k22.h
+[s S378 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S378 . LATB0 LATB1 LATB2 LATB3 LATB4 LATB5 LATB6 LATB7 ]
+"7602
+[s S379 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S379 . LB0 LB1 LB2 LB3 LB4 LB5 LB6 LB7 ]
+"7591
+[u S377 `S378 1 `S379 1 ]
+[n S377 . . . ]
+"7613
+[v _LATBbits `VS377 ~T0 @X0 0 e@3978 ]
+"25 devices.h
 [v _Delay `(v ~T0 @X0 0 ef1`ui ]
 "7814 C:\Program Files (x86)\Microchip\xc8\v1.41\include\pic18f46k22.h
 [s S384 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -35,6 +48,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _LATDbits `VS383 ~T0 @X0 0 e@3980 ]
 "134 mcc_generated_files/eusart1.h
 [v _EUSART1_Write `(v ~T0 @X0 0 ef1`uc ]
+"32 DriverLCD16x2.h
+[v _lcd_init `(v ~T0 @X0 0 ef ]
+"31
+[v _lcd_msg `(v ~T0 @X0 0 ef1`*uc ]
+"36
+[v _DisplayONCursorONToggleON `(v ~T0 @X0 0 ef ]
+"39
+[v _CursorGOTOxy `(v ~T0 @X0 0 ef2`i`i ]
 "18 DriverTeclado.h
 [v _KeyPadAcquire `(i ~T0 @X0 0 ef ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
@@ -6631,33 +6652,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdbool.h: 12: typedef unsigned char bool;
 [; ;interrupt_manager.h: 110: void interrupt INTERRUPT_InterruptManager(void);
 [; ;interrupt_manager.h: 122: void INTERRUPT_Initialize (void);
-[; ;memory.h: 98: uint8_t FLASH_ReadByte(uint32_t flashAddr);
-[; ;memory.h: 124: uint16_t FLASH_ReadWord(uint32_t flashAddr);
-[; ;memory.h: 156: void FLASH_WriteByte(uint32_t flashAddr, uint8_t *flashRdBufPtr, uint8_t byte);
-[; ;memory.h: 192: int8_t FLASH_WriteBlock(uint32_t writeAddr, uint8_t *flashWrBufPtr);
-[; ;memory.h: 217: void FLASH_EraseBlock(uint32_t baseAddr);
-[; ;memory.h: 248: void DATAEE_WriteByte(uint16_t bAdd, uint8_t bData);
-[; ;memory.h: 274: uint8_t DATAEE_ReadByte(uint16_t bAdd);
-[; ;tmr2.h: 102: void TMR2_Initialize(void);
-[; ;tmr2.h: 131: void TMR2_StartTimer(void);
-[; ;tmr2.h: 163: void TMR2_StopTimer(void);
-[; ;tmr2.h: 198: uint8_t TMR2_ReadTimer(void);
-[; ;tmr2.h: 237: void TMR2_WriteTimer(uint8_t timerVal);
-[; ;tmr2.h: 289: void TMR2_LoadPeriodRegister(uint8_t periodVal);
-[; ;tmr2.h: 307: void TMR2_ISR(void);
-[; ;tmr2.h: 325: void TMR2_SetInterruptHandler(void *InterruptHandler);
-[; ;tmr2.h: 343: extern void (*TMR2_InterruptHandler)(void);
-[; ;tmr2.h: 361: void TMR2_DefaultInterruptHandler(void);
-[; ;tmr4.h: 102: void TMR4_Initialize(void);
-[; ;tmr4.h: 131: void TMR4_StartTimer(void);
-[; ;tmr4.h: 163: void TMR4_StopTimer(void);
-[; ;tmr4.h: 198: uint8_t TMR4_ReadTimer(void);
-[; ;tmr4.h: 237: void TMR4_WriteTimer(uint8_t timerVal);
-[; ;tmr4.h: 289: void TMR4_LoadPeriodRegister(uint8_t periodVal);
-[; ;tmr4.h: 307: void TMR4_ISR(void);
-[; ;tmr4.h: 325: void TMR4_SetInterruptHandler(void *InterruptHandler);
-[; ;tmr4.h: 343: extern void (*TMR4_InterruptHandler)(void);
-[; ;tmr4.h: 361: void TMR4_DefaultInterruptHandler(void);
+[; ;eusart1.h: 94: void EUSART1_Initialize(void);
+[; ;eusart1.h: 114: uint8_t EUSART1_Read(void);
+[; ;eusart1.h: 134: void EUSART1_Write(uint8_t txData);
 [; ;__size_t.h: 4: typedef unsigned size_t;
 [; ;stddef.h: 6: typedef int ptrdiff_t;
 [; ;i2c1.h: 83: typedef enum
@@ -6705,11 +6702,35 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;i2c1.h: 685: bool I2C1_MasterQueueIsFull(void);
 [; ;i2c1.h: 686: void I2C1_BusCollisionISR( void );
 [; ;i2c1.h: 687: void I2C1_ISR ( void );
+[; ;tmr4.h: 102: void TMR4_Initialize(void);
+[; ;tmr4.h: 131: void TMR4_StartTimer(void);
+[; ;tmr4.h: 163: void TMR4_StopTimer(void);
+[; ;tmr4.h: 198: uint8_t TMR4_ReadTimer(void);
+[; ;tmr4.h: 237: void TMR4_WriteTimer(uint8_t timerVal);
+[; ;tmr4.h: 289: void TMR4_LoadPeriodRegister(uint8_t periodVal);
+[; ;tmr4.h: 307: void TMR4_ISR(void);
+[; ;tmr4.h: 325: void TMR4_SetInterruptHandler(void *InterruptHandler);
+[; ;tmr4.h: 343: extern void (*TMR4_InterruptHandler)(void);
+[; ;tmr4.h: 361: void TMR4_DefaultInterruptHandler(void);
+[; ;tmr2.h: 102: void TMR2_Initialize(void);
+[; ;tmr2.h: 131: void TMR2_StartTimer(void);
+[; ;tmr2.h: 163: void TMR2_StopTimer(void);
+[; ;tmr2.h: 198: uint8_t TMR2_ReadTimer(void);
+[; ;tmr2.h: 237: void TMR2_WriteTimer(uint8_t timerVal);
+[; ;tmr2.h: 289: void TMR2_LoadPeriodRegister(uint8_t periodVal);
+[; ;tmr2.h: 307: void TMR2_ISR(void);
+[; ;tmr2.h: 325: void TMR2_SetInterruptHandler(void *InterruptHandler);
+[; ;tmr2.h: 343: extern void (*TMR2_InterruptHandler)(void);
+[; ;tmr2.h: 361: void TMR2_DefaultInterruptHandler(void);
+[; ;memory.h: 98: uint8_t FLASH_ReadByte(uint32_t flashAddr);
+[; ;memory.h: 124: uint16_t FLASH_ReadWord(uint32_t flashAddr);
+[; ;memory.h: 156: void FLASH_WriteByte(uint32_t flashAddr, uint8_t *flashRdBufPtr, uint8_t byte);
+[; ;memory.h: 192: int8_t FLASH_WriteBlock(uint32_t writeAddr, uint8_t *flashWrBufPtr);
+[; ;memory.h: 217: void FLASH_EraseBlock(uint32_t baseAddr);
+[; ;memory.h: 248: void DATAEE_WriteByte(uint16_t bAdd, uint8_t bData);
+[; ;memory.h: 274: uint8_t DATAEE_ReadByte(uint16_t bAdd);
 [; ;pwm4.h: 96: void PWM4_Initialize(void);
 [; ;pwm4.h: 123: void PWM4_LoadDutyValue(uint16_t dutyValue);
-[; ;eusart1.h: 94: void EUSART1_Initialize(void);
-[; ;eusart1.h: 114: uint8_t EUSART1_Read(void);
-[; ;eusart1.h: 134: void EUSART1_Write(uint8_t txData);
 [; ;mcc.h: 74: void SYSTEM_Initialize(void);
 [; ;mcc.h: 87: void OSCILLATOR_Initialize(void);
 [; ;devices.h: 25: void Delay(uint16_t contador);
@@ -6717,63 +6738,105 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;DriverTeclado.h: 15: void KeyPadInit(void);
 [; ;DriverTeclado.h: 16: char KeyPadScan(void);
 [; ;DriverTeclado.h: 18: int KeyPadAcquire(void);
-"53 main.c
+[; ;DriverLCD16x2.h: 28: void lcd_cmd(unsigned char x);
+[; ;DriverLCD16x2.h: 29: void lcd_cmd_hf(unsigned char x);
+[; ;DriverLCD16x2.h: 30: void lcd_dwr(unsigned char x);
+[; ;DriverLCD16x2.h: 31: void lcd_msg(unsigned char *c);
+[; ;DriverLCD16x2.h: 32: void lcd_init(void);
+[; ;DriverLCD16x2.h: 33: void lcd_lat(void);
+[; ;DriverLCD16x2.h: 34: void DisplayClear(void);
+[; ;DriverLCD16x2.h: 35: void HomeReturn(void);
+[; ;DriverLCD16x2.h: 36: void DisplayONCursorONToggleON(void);
+[; ;DriverLCD16x2.h: 37: void DisplayONCursorOFFToggleOFF(void);
+[; ;DriverLCD16x2.h: 38: void DisplayOFF(void);
+[; ;DriverLCD16x2.h: 39: void CursorGOTOxy(int x,int y);
+"55 main.c
 [v _main `(v ~T0 @X0 1 ef ]
-"54
+"56
 {
-[; ;main.c: 53: void main(void)
-[; ;main.c: 54: {
+[; ;main.c: 55: void main(void)
+[; ;main.c: 56: {
 [e :U _main ]
 [f ]
-[; ;main.c: 56: SYSTEM_Initialize();
-"56
+[; ;main.c: 58: SYSTEM_Initialize();
+"58
 [e ( _SYSTEM_Initialize ..  ]
-[; ;main.c: 75: (INTCONbits.GIE = 1);
-"75
-[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
-[; ;main.c: 77: (INTCONbits.PEIE = 1);
+[; ;main.c: 77: (INTCONbits.GIE = 1);
 "77
+[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
+[; ;main.c: 79: (INTCONbits.PEIE = 1);
+"79
 [e = . . _INTCONbits 1 6 -> -> 1 `i `uc ]
-[; ;main.c: 80: TMR4_SetInterruptHandler(TMR4_Interrupt);
-"80
+[; ;main.c: 82: TMR4_SetInterruptHandler(TMR4_Interrupt);
+"82
 [e ( _TMR4_SetInterruptHandler (1 -> &U _TMR4_Interrupt `*v ]
-[; ;main.c: 95: Delay(10*10*10);
-"95
-[e ( _Delay (1 -> * * -> 10 `i -> 10 `i -> 10 `i `ui ]
-[; ;main.c: 96: do { LATDbits.LATD0 = 0; } while(0);
-"96
+[; ;main.c: 84: KeyPadInit();
+"84
+[e ( _KeyPadInit ..  ]
+[; ;main.c: 86: do { LATBbits.LATB4 = 1; } while(0);
+"86
 [e :U 853 ]
+{
+[e = . . _LATBbits 0 4 -> -> 1 `i `uc ]
+}
+[e :U 852 ]
+[; ;main.c: 99: Delay(10*10*10);
+"99
+[e ( _Delay (1 -> * * -> 10 `i -> 10 `i -> 10 `i `ui ]
+[; ;main.c: 100: do { LATDbits.LATD0 = 0; } while(0);
+"100
+[e :U 856 ]
 {
 [e = . . _LATDbits 0 0 -> -> 0 `i `uc ]
 }
-[e :U 852 ]
-[; ;main.c: 98: do { LATDbits.LATD2 = 1; } while(0);
-"98
-[e :U 856 ]
+[e :U 855 ]
+[; ;main.c: 102: do { LATDbits.LATD2 = 1; } while(0);
+"102
+[e :U 859 ]
 {
 [e = . . _LATDbits 0 2 -> -> 1 `i `uc ]
 }
-[e :U 855 ]
-[; ;main.c: 99: EUSART1_Write(1);
-"99
-[e ( _EUSART1_Write (1 -> -> 1 `i `uc ]
-[; ;main.c: 101: while (1)
-"101
 [e :U 858 ]
-[; ;main.c: 102: {
-"102
-{
-[; ;main.c: 103: EUSART1_Write(KeyPadAcquire());
+[; ;main.c: 103: EUSART1_Write(1);
 "103
-[e ( _EUSART1_Write (1 -> ( _KeyPadAcquire ..  `uc ]
+[e ( _EUSART1_Write (1 -> -> 1 `i `uc ]
+[; ;main.c: 105: lcd_init();
 "105
-}
-[e :U 857 ]
-"101
-[e $U 858  ]
-[e :U 859 ]
-[; ;main.c: 105: }
-[; ;main.c: 106: }
+[e ( _lcd_init ..  ]
+[; ;main.c: 106: lcd_msg("puto el q lee");
 "106
+[e ( _lcd_msg (1 -> :s 1C `*uc ]
+[; ;main.c: 107: DisplayONCursorONToggleON();
+"107
+[e ( _DisplayONCursorONToggleON ..  ]
+[; ;main.c: 108: Delay(10*10*10);
+"108
+[e ( _Delay (1 -> * * -> 10 `i -> 10 `i -> 10 `i `ui ]
+[; ;main.c: 111: CursorGOTOxy(5,2);
+"111
+[e ( _CursorGOTOxy (2 , -> 5 `i -> 2 `i ]
+[; ;main.c: 112: while (1)
+"112
+[e :U 861 ]
+[; ;main.c: 113: {
+"113
+{
+[; ;main.c: 114: EUSART1_Write(KeyPadAcquire());
+"114
+[e ( _EUSART1_Write (1 -> ( _KeyPadAcquire ..  `uc ]
+[; ;main.c: 116: Delay(10*10*10);
+"116
+[e ( _Delay (1 -> * * -> 10 `i -> 10 `i -> 10 `i `ui ]
+"118
+}
+[e :U 860 ]
+"112
+[e $U 861  ]
+[e :U 862 ]
+[; ;main.c: 118: }
+[; ;main.c: 119: }
+"119
 [e :UE 850 ]
 }
+[a 1C 112 117 116 111 32 101 108 32 113 32 108 101 101 0 ]
+

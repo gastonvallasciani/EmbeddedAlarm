@@ -50,12 +50,12 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include "interrupt_manager.h"
-#include "memory.h"
-#include "tmr2.h"
-#include "tmr4.h"
-#include "i2c1.h"
-#include "pwm4.h"
 #include "eusart1.h"
+#include "i2c1.h"
+#include "tmr4.h"
+#include "tmr2.h"
+#include "memory.h"
+#include "pwm4.h"
 
 #define _XTAL_FREQ  8000000
 

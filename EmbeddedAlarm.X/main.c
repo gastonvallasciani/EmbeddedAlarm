@@ -46,6 +46,8 @@
 #include "mcc_generated_files/mcc.h"
 #include  "devices.h"
 #include  "DriverTeclado.h"
+#include  "DriverLCD16x2.h"
+
 
 /*
                          Main application
@@ -79,7 +81,9 @@ void main(void)
     
     TMR4_SetInterruptHandler(TMR4_Interrupt);
     
-   // KeyPadInit();
+    KeyPadInit();
+    
+    LEDA_SetHigh();
 
     // Enable the Peripheral Interrupts
     //INTERRUPT_PeripheralInterruptEnable();
@@ -97,10 +101,19 @@ void main(void)
     
     LED_TEST_RD2_SetHigh();  
      EUSART1_Write(1);
-    
+     
+    lcd_init();
+    lcd_msg("puto el q lee");
+    DisplayONCursorONToggleON();
+    Delay(_1s);
+    //DisplayClear();
+    //HomeReturn();
+    CursorGOTOxy(5,2);
     while (1)
     {
          EUSART1_Write(KeyPadAcquire());
+      
+         Delay(_1s);
         // Add your application code
     }
 }

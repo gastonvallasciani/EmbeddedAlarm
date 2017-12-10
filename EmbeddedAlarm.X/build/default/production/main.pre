@@ -8552,86 +8552,14 @@ void interrupt INTERRUPT_InterruptManager(void);
 # 122
 void INTERRUPT_Initialize (void);
 
-# 98 "mcc_generated_files/memory.h"
-uint8_t FLASH_ReadByte(uint32_t flashAddr);
+# 94 "mcc_generated_files/eusart1.h"
+void EUSART1_Initialize(void);
 
-# 124
-uint16_t FLASH_ReadWord(uint32_t flashAddr);
+# 114
+uint8_t EUSART1_Read(void);
 
-# 156
-void FLASH_WriteByte(uint32_t flashAddr, uint8_t *flashRdBufPtr, uint8_t byte);
-
-# 192
-int8_t FLASH_WriteBlock(uint32_t writeAddr, uint8_t *flashWrBufPtr);
-
-# 217
-void FLASH_EraseBlock(uint32_t baseAddr);
-
-# 248
-void DATAEE_WriteByte(uint16_t bAdd, uint8_t bData);
-
-# 274
-uint8_t DATAEE_ReadByte(uint16_t bAdd);
-
-# 102 "mcc_generated_files/tmr2.h"
-void TMR2_Initialize(void);
-
-# 131
-void TMR2_StartTimer(void);
-
-# 163
-void TMR2_StopTimer(void);
-
-# 198
-uint8_t TMR2_ReadTimer(void);
-
-# 237
-void TMR2_WriteTimer(uint8_t timerVal);
-
-# 289
-void TMR2_LoadPeriodRegister(uint8_t periodVal);
-
-# 307
-void TMR2_ISR(void);
-
-# 325
-void TMR2_SetInterruptHandler(void *InterruptHandler);
-
-# 343
-extern void (*TMR2_InterruptHandler)(void);
-
-# 361
-void TMR2_DefaultInterruptHandler(void);
-
-# 102 "mcc_generated_files/tmr4.h"
-void TMR4_Initialize(void);
-
-# 131
-void TMR4_StartTimer(void);
-
-# 163
-void TMR4_StopTimer(void);
-
-# 198
-uint8_t TMR4_ReadTimer(void);
-
-# 237
-void TMR4_WriteTimer(uint8_t timerVal);
-
-# 289
-void TMR4_LoadPeriodRegister(uint8_t periodVal);
-
-# 307
-void TMR4_ISR(void);
-
-# 325
-void TMR4_SetInterruptHandler(void *InterruptHandler);
-
-# 343
-extern void (*TMR4_InterruptHandler)(void);
-
-# 361
-void TMR4_DefaultInterruptHandler(void);
+# 134
+void EUSART1_Write(uint8_t txData);
 
 # 4 "C:\Program Files (x86)\Microchip\xc8\v1.41\include\__size_t.h"
 typedef unsigned size_t;
@@ -8706,20 +8634,92 @@ bool I2C1_MasterQueueIsFull(void);
 void I2C1_BusCollisionISR( void );
 void I2C1_ISR ( void );
 
+# 102 "mcc_generated_files/tmr4.h"
+void TMR4_Initialize(void);
+
+# 131
+void TMR4_StartTimer(void);
+
+# 163
+void TMR4_StopTimer(void);
+
+# 198
+uint8_t TMR4_ReadTimer(void);
+
+# 237
+void TMR4_WriteTimer(uint8_t timerVal);
+
+# 289
+void TMR4_LoadPeriodRegister(uint8_t periodVal);
+
+# 307
+void TMR4_ISR(void);
+
+# 325
+void TMR4_SetInterruptHandler(void *InterruptHandler);
+
+# 343
+extern void (*TMR4_InterruptHandler)(void);
+
+# 361
+void TMR4_DefaultInterruptHandler(void);
+
+# 102 "mcc_generated_files/tmr2.h"
+void TMR2_Initialize(void);
+
+# 131
+void TMR2_StartTimer(void);
+
+# 163
+void TMR2_StopTimer(void);
+
+# 198
+uint8_t TMR2_ReadTimer(void);
+
+# 237
+void TMR2_WriteTimer(uint8_t timerVal);
+
+# 289
+void TMR2_LoadPeriodRegister(uint8_t periodVal);
+
+# 307
+void TMR2_ISR(void);
+
+# 325
+void TMR2_SetInterruptHandler(void *InterruptHandler);
+
+# 343
+extern void (*TMR2_InterruptHandler)(void);
+
+# 361
+void TMR2_DefaultInterruptHandler(void);
+
+# 98 "mcc_generated_files/memory.h"
+uint8_t FLASH_ReadByte(uint32_t flashAddr);
+
+# 124
+uint16_t FLASH_ReadWord(uint32_t flashAddr);
+
+# 156
+void FLASH_WriteByte(uint32_t flashAddr, uint8_t *flashRdBufPtr, uint8_t byte);
+
+# 192
+int8_t FLASH_WriteBlock(uint32_t writeAddr, uint8_t *flashWrBufPtr);
+
+# 217
+void FLASH_EraseBlock(uint32_t baseAddr);
+
+# 248
+void DATAEE_WriteByte(uint16_t bAdd, uint8_t bData);
+
+# 274
+uint8_t DATAEE_ReadByte(uint16_t bAdd);
+
 # 96 "mcc_generated_files/pwm4.h"
 void PWM4_Initialize(void);
 
 # 123
 void PWM4_LoadDutyValue(uint16_t dutyValue);
-
-# 94 "mcc_generated_files/eusart1.h"
-void EUSART1_Initialize(void);
-
-# 114
-uint8_t EUSART1_Read(void);
-
-# 134
-void EUSART1_Write(uint8_t txData);
 
 # 74 "mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
@@ -8737,13 +8737,27 @@ char KeyPadScan(void);
 
 int KeyPadAcquire(void);
 
-# 53 "main.c"
+# 28 "DriverLCD16x2.h"
+void lcd_cmd(unsigned char x);
+void lcd_cmd_hf(unsigned char x);
+void lcd_dwr(unsigned char x);
+void lcd_msg(unsigned char *c);
+void lcd_init(void);
+void lcd_lat(void);
+void DisplayClear(void);
+void HomeReturn(void);
+void DisplayONCursorONToggleON(void);
+void DisplayONCursorOFFToggleOFF(void);
+void DisplayOFF(void);
+void CursorGOTOxy(int x,int y);
+
+# 55 "main.c"
 void main(void)
 {
 
 SYSTEM_Initialize();
 
-# 75
+# 77
 (INTCONbits.GIE = 1);
 
 (INTCONbits.PEIE = 1);
@@ -8751,16 +8765,29 @@ SYSTEM_Initialize();
 
 TMR4_SetInterruptHandler(TMR4_Interrupt);
 
-# 95
+KeyPadInit();
+
+do { LATBbits.LATB4 = 1; } while(0);
+
+# 99
 Delay(10*10*10);
 do { LATDbits.LATD0 = 0; } while(0);
 
 do { LATDbits.LATD2 = 1; } while(0);
 EUSART1_Write(1);
 
+lcd_init();
+lcd_msg("puto el q lee");
+DisplayONCursorONToggleON();
+Delay(10*10*10);
+
+
+CursorGOTOxy(5,2);
 while (1)
 {
 EUSART1_Write(KeyPadAcquire());
+
+Delay(10*10*10);
 
 }
 }
